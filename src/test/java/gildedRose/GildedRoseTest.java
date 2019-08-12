@@ -114,4 +114,15 @@ public class GildedRoseTest {
 
     }
 
+    @Test
+    public void should_return_quality_49_and_sellIn_0_when_given_item_with_quality_50_and_name_Backstage_and_sellIn_1(){
+        Item[] item = new Item[1];
+        item[0]= new Item("Backstage",1,50);
+        GildedRose gildedRose = new GildedRose(item);
+        gildedRose.updateQuality();
+        assertEquals(gildedRose.items[0].quality,49);
+        assertEquals(gildedRose.items[0].sellIn,0);
+
+    }
+
 }
