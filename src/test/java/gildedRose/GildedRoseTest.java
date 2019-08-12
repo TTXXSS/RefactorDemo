@@ -23,5 +23,14 @@ public class GildedRoseTest {
         assertEquals(gildedRose.items[0].quality,1);
         assertEquals(gildedRose.items[0].sellIn,10);
     }
+    @Test
+    public void should_return_quality_2_and_sellIn_9_when_given_item_with_quality_1_and_name_Aged_Brie_of_Ragnaros_and_sellIn_10(){
+        Item[] item = new Item[1];
+        item[0]= new Item("Aged Brie",10,1);
+        GildedRose gildedRose = new GildedRose(item);
+        gildedRose.updateQuality();
+        assertEquals(gildedRose.items[0].quality,2);
+        assertEquals(gildedRose.items[0].sellIn,9);
+    }
 
 }
