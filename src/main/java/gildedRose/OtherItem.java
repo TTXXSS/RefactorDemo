@@ -26,4 +26,9 @@ public class OtherItem implements Stratege {
     public void updateQualityDecrease1(Item item) {
         item.quality-=1;
     }
+
+    @Override
+    public void updateQualityAdd1(Item item) {
+        item.quality+=1;
+    }
 }

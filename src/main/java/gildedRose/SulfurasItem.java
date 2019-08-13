@@ -15,4 +15,9 @@ public class SulfurasItem implements Stratege {
     public void updateQualityDecrease1(Item item) {
 
     }
+
+    @Override
+    public void updateQualityAdd1(Item item) {
+
+    }
 }

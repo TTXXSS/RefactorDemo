@@ -4,7 +4,7 @@ public class AgedItem implements Stratege {
     @Override
     public void updateQuality(Item item) {
         if (isQualityLessThan50(item)) {
-            item.quality = item.quality + 1;
+            updateQualityAdd1(item);
         }
 
         if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
@@ -13,7 +13,7 @@ public class AgedItem implements Stratege {
 
         if (item.sellIn < 0) {
             if (isQualityLessThan50(item)) {
-                item.quality = item.quality + 1;
+                updateQualityAdd1(item);
             }
         }
     }
@@ -26,5 +26,10 @@ public class AgedItem implements Stratege {
     @Override
     public void updateQualityDecrease1(Item item) {
 
+    }
+
+    @Override
+    public void updateQualityAdd1(Item item) {
+        item.quality+=1;
     }
 }

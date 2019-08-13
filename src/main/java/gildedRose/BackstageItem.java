@@ -4,18 +4,18 @@ public class BackstageItem implements Stratege{
     @Override
     public void updateQuality(Item item) {
         if (isQualityLessThan50(item)) {
-            item.quality = item.quality + 1;
+            updateQualityAdd1(item);
 
             if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                 if (item.sellIn < 11) {
                     if (isQualityLessThan50(item)) {
-                        item.quality = item.quality + 1;
+                        updateQualityAdd1(item);
                     }
                 }
 
                 if (item.sellIn < 6) {
                     if (isQualityLessThan50(item)) {
-                        item.quality = item.quality + 1;
+                        updateQualityAdd1(item);
                     }
                 }
             }
@@ -37,5 +37,10 @@ public class BackstageItem implements Stratege{
     @Override
     public void updateQualityDecrease1(Item item) {
 
+    }
+
+    @Override
+    public void updateQualityAdd1(Item item) {
+        item.quality+=1;
     }
 }
