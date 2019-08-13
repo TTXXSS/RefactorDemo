@@ -10,4 +10,9 @@ public class SulfurasItem implements Stratege {
     public boolean isQualityLessThan50(Item item) {
         return false;
     }
+
+    @Override
+    public void updateQualityDecrease1(Item item) {
+
+    }
 }

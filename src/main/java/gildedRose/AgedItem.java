@@ -22,4 +22,9 @@ public class AgedItem implements Stratege {
     public boolean isQualityLessThan50(Item item) {
         return item.quality<50;
     }
+
+    @Override
+    public void updateQualityDecrease1(Item item) {
+
+    }
 }

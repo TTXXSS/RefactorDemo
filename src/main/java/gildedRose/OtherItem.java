@@ -4,14 +4,14 @@ public class OtherItem implements Stratege {
     @Override
     public void updateQuality(Item item) {
         {
-            item.quality = item.quality - 1;
+            updateQualityDecrease1(item);
         }
 
         item.sellIn = item.sellIn - 1;
 
         if (item.sellIn < 0) {
             if (item.quality > 0) {
-                item.quality = item.quality - 1;
+                updateQualityDecrease1(item);
 
             }
         }
@@ -20,5 +20,10 @@ public class OtherItem implements Stratege {
     @Override
     public boolean isQualityLessThan50(Item item) {
         return false;
+    }
+
+    @Override
+    public void updateQualityDecrease1(Item item) {
+        item.quality-=1;
     }
 }
