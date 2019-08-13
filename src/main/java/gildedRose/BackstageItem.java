@@ -7,11 +7,7 @@ public class BackstageItem implements Stratege{
             updateQualityAdd1(item);
 
             if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                if (item.sellIn < 11) {
-                    if (isQualityLessThan50(item)) {
-                        updateQualityAdd1(item);
-                    }
-                }
+                addQuality1BySellInLess11QualityLess50(item, 11);
 
                 if (item.sellIn < 6) {
                     if (isQualityLessThan50(item)) {
@@ -26,6 +22,14 @@ public class BackstageItem implements Stratege{
         }
         if (item.sellIn < 0) {
             item.quality = item.quality - item.quality;
+        }
+    }
+
+    private void addQuality1BySellInLess11QualityLess50(Item item, int i) {
+        if (item.sellIn < i) {
+            if (isQualityLessThan50(item)) {
+                updateQualityAdd1(item);
+            }
         }
     }
 
