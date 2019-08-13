@@ -12,7 +12,7 @@ public class AgedItem implements Stratege {
         }
 
         if (item.sellIn < 0) {
-            if (item.quality < 50) {
+            if (isQualityLessThan50(item)) {
                 item.quality = item.quality + 1;
             }
         }
@@ -20,6 +20,6 @@ public class AgedItem implements Stratege {
 
     @Override
     public boolean isQualityLessThan50(Item item) {
-        return item.quality>50;
+        return item.quality<50;
     }
 }

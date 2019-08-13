@@ -31,6 +31,6 @@ public class BackstageItem implements Stratege{
 
     @Override
     public boolean isQualityLessThan50(Item item) {
-        return item.quality>50;
+        return item.quality<50;
     }
 }
