@@ -3,6 +3,17 @@ package gildedRose;
 public class BackstageItem implements Stratege{
     @Override
     public void updateQuality(Item item) {
+        updateQualityByQualityLess50(item);
+
+        if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
+            item.sellIn = item.sellIn - 1;
+        }
+        if (item.sellIn < 0) {
+            item.quality = item.quality - item.quality;
+        }
+    }
+
+    private void updateQualityByQualityLess50(Item item) {
         if (isQualityLessThan50(item)) {
             updateQualityAdd1(item);
 
@@ -11,13 +22,6 @@ public class BackstageItem implements Stratege{
 
                 addQuality1BySellInLess6QualityLess50(item, 6);
             }
-        }
-
-        if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
-            item.sellIn = item.sellIn - 1;
-        }
-        if (item.sellIn < 0) {
-            item.quality = item.quality - item.quality;
         }
     }
 
