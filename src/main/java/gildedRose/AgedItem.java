@@ -3,7 +3,7 @@ package gildedRose;
 public class AgedItem implements Stratege {
     @Override
     public void updateQuality(Item item) {
-        if (item.quality < 50) {
+        if (isQualityLessThan50(item)) {
             item.quality = item.quality + 1;
         }
 
@@ -16,5 +16,10 @@ public class AgedItem implements Stratege {
                 item.quality = item.quality + 1;
             }
         }
+    }
+
+    @Override
+    public boolean isQualityLessThan50(Item item) {
+        return item.quality>50;
     }
 }

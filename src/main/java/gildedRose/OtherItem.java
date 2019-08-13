@@ -16,4 +16,9 @@ public class OtherItem implements Stratege {
             }
         }
     }
+
+    @Override
+    public boolean isQualityLessThan50(Item item) {
+        return false;
+    }
 }
