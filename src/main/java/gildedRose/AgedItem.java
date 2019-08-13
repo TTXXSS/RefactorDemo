@@ -5,12 +5,16 @@ public class AgedItem implements Stratege {
     public void updateQuality(Item item) {
         updateQualityByQualityLess50(item);
 
-        if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
-            item.sellIn = item.sellIn - 1;
-        }
+        decreaseSellIn1ByNotEqualsSulfuras(item);
 
         if (item.sellIn < 0) {
             updateQualityByQualityLess50(item);
+        }
+    }
+
+    private void decreaseSellIn1ByNotEqualsSulfuras(Item item) {
+        if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
+            item.sellIn = item.sellIn - 1;
         }
     }
 
