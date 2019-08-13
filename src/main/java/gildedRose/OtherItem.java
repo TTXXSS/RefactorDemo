@@ -3,12 +3,15 @@ package gildedRose;
 public class OtherItem implements Stratege {
     @Override
     public void updateQuality(Item item) {
-        {
-            updateQualityDecrease1(item);
-        }
+
+        updateQualityDecrease1(item);
 
         item.sellIn = item.sellIn - 1;
 
+        updateQualityBySellInLess0QualityGreater0(item);
+    }
+
+    private void updateQualityBySellInLess0QualityGreater0(Item item) {
         if (item.sellIn < 0) {
             if (item.quality > 0) {
                 updateQualityDecrease1(item);
