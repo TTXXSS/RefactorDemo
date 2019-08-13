@@ -8,7 +8,7 @@ public class GildedRoseTest {
     @Test
     public void should_return_quality_0_and_sellIn_9_when_given_item_with_quality_1_and_name_Aged_and_sellIn_10(){
         Item[] item = new Item[1];
-        item[0]= new Item("Aged",10,1);
+        item[0]= new Item("Other Item",10,1);
         GildedRose gildedRose = new GildedRose(item);
         gildedRose.updateQuality();
         assertEquals(gildedRose.items[0].quality,0);
@@ -106,7 +106,7 @@ public class GildedRoseTest {
     @Test
     public void should_return_quality_48_and_sellIn_negtive_1_when_given_item_with_quality_50_and_name_Backstage_and_sellIn_0(){
         Item[] item = new Item[1];
-        item[0]= new Item("Backstage",0,50);
+        item[0]= new Item("Other Item",0,50);
         GildedRose gildedRose = new GildedRose(item);
         gildedRose.updateQuality();
         assertEquals(gildedRose.items[0].quality,48);
@@ -117,7 +117,7 @@ public class GildedRoseTest {
     @Test
     public void should_return_quality_49_and_sellIn_0_when_given_item_with_quality_50_and_name_Backstage_and_sellIn_1(){
         Item[] item = new Item[1];
-        item[0]= new Item("Backstage",1,50);
+        item[0]= new Item("Other Item",1,50);
         GildedRose gildedRose = new GildedRose(item);
         gildedRose.updateQuality();
         assertEquals(gildedRose.items[0].quality,49);

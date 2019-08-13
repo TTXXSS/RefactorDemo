@@ -1,6 +1,31 @@
 package gildedRose;
 
 public class BackstageItem implements Stratege{
+    private String name;
+    private int sellIn;
+    private int quality;
+
+    public BackstageItem() {
+    }
+
+    public BackstageItem(String name, int sellIn, int quality) {
+        this.name = name;
+        this.sellIn = sellIn;
+        this.quality = quality;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getSellIn() {
+        return sellIn;
+    }
+
+    public int getQuality() {
+        return quality;
+    }
+
     @Override
     public void updateQuality(Item item) {
         updateQualityByQualityLess50(item);
@@ -58,5 +83,10 @@ public class BackstageItem implements Stratege{
     @Override
     public void updateQualityAdd1(Item item) {
         item.quality+=1;
+    }
+
+    @Override
+    public boolean isEqualsName(Item item) {
+        return item.name.equals(getName());
     }
 }
