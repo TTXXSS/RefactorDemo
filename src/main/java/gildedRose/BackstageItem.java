@@ -5,11 +5,15 @@ public class BackstageItem implements Stratege{
     public void updateQuality(Item item) {
         updateQualityByQualityLess50(item);
 
-        if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
-            item.sellIn = item.sellIn - 1;
-        }
+        decreaseSellIn1ByEquaelsSulfuras(item);
         if (item.sellIn < 0) {
             item.quality = item.quality - item.quality;
+        }
+    }
+
+    private void decreaseSellIn1ByEquaelsSulfuras(Item item) {
+        if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
+            item.sellIn = item.sellIn - 1;
         }
     }
 
